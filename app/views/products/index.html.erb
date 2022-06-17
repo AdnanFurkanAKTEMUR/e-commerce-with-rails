@@ -1,0 +1,36 @@
+<% if current_user and current_user.admin? %>
+  <div class="container">
+    <h1>All products here!</h1>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">İsim</th>
+        <th scope="col">Açıklama</th>
+        <th scope="col">Fiyat</th>
+        <th scope="col">Uyumluluk</th>
+        <th scope="col">Özellikler</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @products.each do |p| %>
+        <tr>
+          <td><%= link_to "#{p.id}", product_path(p.id) %></td>
+          <td><%= p.name %></td>
+          <td><%= p.description %></td>
+          <td><%= p.price %></td>
+          <td><%= p.compatibility %></td>
+          <td><%= p.feature %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <%= link_to "Create Product", new_product_path %>
+  </div>
+<% else %>
+  <div class="container">
+    <h2 class="mt-5 text-danger">This page for only admins. You are not admin.</h2>
+  </div>
+<% end %>

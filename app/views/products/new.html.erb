@@ -1,0 +1,33 @@
+<% if current_user and current_user.admin? %>
+  <div class="container">
+    <%= form_with model: @product do |f| %>
+      <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <div>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+      </div>
+      <div>
+        <%= f.label :price %>
+        <%= f.text_field :price %>
+      </div>
+      <div>
+        <%= f.label :compatibility %>
+        <%= f.text_field :compatibility %>
+      </div>
+      <div>
+        <%= f.label :feature %>
+        <%= f.text_field :feature %>
+      </div>
+      <div>
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="container">
+    <h2 class="mt-5 text-danger">This page for only admins. You are not admin.</h2>
+  </div>
+<% end %>

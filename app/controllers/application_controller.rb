@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 
+  before_action :get_cat
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -9,5 +10,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: attributes)
     devise_parameter_sanitizer.permit(:account_update, keys: attributes)
   end
-
+  def get_cat
+    # kategoriler burada çekilecek
+  end
 end

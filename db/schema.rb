@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_17_191445) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_01_114021) do
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "active"
+    t.integer "priorty"
+    t.boolean "show_products"
+    t.string "image"
+    t.integer "product_counts"
+    t.boolean "show_in_menu"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "description"

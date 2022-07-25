@@ -4,7 +4,7 @@ server '164.92.160.202', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:AdnanFurkanAKTEMUR/e-commerce-with-rails.git'
 set :application,     'e-commerce-with-rails'
-set :user,            'adnanfurkan@adnanilk'
+set :user,            'adnanfurkan'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 

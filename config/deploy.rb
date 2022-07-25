@@ -1,5 +1,5 @@
 # Change these
-require "bundler/capistrano"
+
 server '164.92.160.202', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:AdnanFurkanAKTEMUR/e-commerce-with-rails.git'

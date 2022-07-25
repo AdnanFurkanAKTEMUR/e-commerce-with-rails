@@ -1,5 +1,7 @@
 # Change these
-require "bundler/capistrano"
+# config/deploy.rb
+
+append :linked_dirs, '.bundle'
 server '164.92.160.202', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:AdnanFurkanAKTEMUR/e-commerce-with-rails.git'

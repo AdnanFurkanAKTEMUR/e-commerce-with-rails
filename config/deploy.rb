@@ -1,6 +1,6 @@
 # Change these
 # config/deploy.rb 
-require "bundler/capistrano"
+
 append :linked_dirs, '.bundle'
 server '164.92.160.202', port: 22, roles: [:web, :app, :db], primary: true
 

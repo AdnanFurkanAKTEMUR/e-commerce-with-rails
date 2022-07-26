@@ -13,8 +13,8 @@ set :ssh_options, { forward_agent: true, user: "deploy", auth_methods: ['publick
 
 # Only keep the last 5 releases to save disk space
 set :keep_releases, 5
-
-Default branch is :main
+set :main, $1 if `git branch` =~ /\* (\S+)\s/m
+# Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name

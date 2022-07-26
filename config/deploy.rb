@@ -13,7 +13,7 @@ set :ssh_options, { forward_agent: true, user: "deploy", auth_methods: ['publick
 
 # Only keep the last 5 releases to save disk space
 set :keep_releases, 5
-set :main, $1 if `git branch` =~ /\* (\S+)\s/m
+set :branch, ENV['BRANCH'] if ENV['BRANCH']
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

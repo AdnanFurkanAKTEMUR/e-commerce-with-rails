@@ -10,7 +10,7 @@ set :repo_url, "git@github.com:AdnanFurkanAKTEMUR/e-commerce-with-rails.git"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/deploy/e-commerce-with-rails'
 
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'tmp/webpacker', 'vendor', '.bundle', 'public/system', 'public/uploads', 'storage'
+#append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'tmp/webpacker', 'vendor', '.bundle', 'public/system', 'public/uploads', 'storage'
 
 # Only keep the last 5 releases to save disk space
 set :keep_releases, 5

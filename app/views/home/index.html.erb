@@ -1,4 +1,5 @@
-<div class="container mt-5">
+<div class="container">
+  <%= render 'shared/slider' %>
   <div class="row">
     <% @products.each do |p| %>
       <div class="col-md-4">
@@ -14,14 +15,14 @@
               <div class="col-md-8">
                 <p> <strong>Ürün ismi:</strong> <%= p.name %> </p>
                 <p> <strong>Ürün Kategorisi:</strong><%= p.product_categories.first.category.name %> </p>
-                <p> <strong>Marka:</strong><%= p.brand.name %> </p>
+<!--                <p> <strong>Marka:</strong><%#= p.brand.name %> </p>-->
                 <p> <strong>Fiyat:</strong><%= p.price %> TL</p>
                 <p> <strong>Ürün Açıklaması:</strong><%= p.description %> </p>
                 <p> <strong>Ürün Uyumu:</strong><%= p.compatibility %> </p>
               </div>
             </div>
             <div class="d-grid gap-2">
-              <%= link_to "Ürün Detayına Git", root_path, class:"btn btn-primary" %>
+              <%= link_to "Ürün Detayına Git", product_path(p.id), class:"btn btn-primary" %>
             </div>
           </div>
         </div>
